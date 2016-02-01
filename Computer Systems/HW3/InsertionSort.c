@@ -23,12 +23,12 @@ int main(void)
   insertSort(data, size);
   printf("Insertion sort is finished!\n");
   print_array(data, size);
-  exit(0);
+  return 0;
 }
 
 
 int str_lt (char *x, char *y) {
-  for ( *x!='\0' && *y!='\0'; x++, y++) {
+  for (; *x!='\0' && *y!='\0'; x++, y++) {
     if ( *x < *y ) {
         return 1;
     }

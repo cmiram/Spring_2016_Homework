@@ -30,8 +30,8 @@ main()
 
 void SolutionA1() {
 	int c, nl, nw, nc, state;
-    state = OUT;
     nl = nw = nc = 0;
+    state = OUT;
 	char x1[100] = "The quick brown fox jumped over the lazy dog.";
 	
     while (x1[nc] != '\0') {
