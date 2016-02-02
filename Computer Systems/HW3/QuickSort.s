@@ -68,7 +68,7 @@ ptrLoop:
 	
 quickSort:
 	move $s0, $a0 #first
-	move $s1, $a1 #second
+	move $s1, $a1 #last
 	move $t0, $s0 #i
 	move $t1, $s1 #j
 	add $t2, $t0, $t1 #x = i + j
@@ -88,6 +88,7 @@ iWhile:
 	sw $t0, 4($sp) #save i
 	sw $t1, 8($sp) #save j
 	sw $t2, 12($sp) #save x
+	sw $t3, 16($sp) #save a
 	addi $sp, $sp, -16 #move sp 16
 	jal str_lt
 	addi $sp, $sp, 16 #move sp 16
@@ -95,6 +96,7 @@ iWhile:
 	lw $t0, 4($sp) #restore i
 	lw $t1, 8($sp) #restore j
 	lw $t2, 12($sp) #restore x
+	lw $t3, 16($sp) #restore a
 	move $t5, $v0 #str_lt return value
 	beqz $t5, jWhile #if (str_lt == 0) jump to next while loop
 	addi $t0, $t0, 1 #i++
@@ -109,6 +111,7 @@ jWhile:
 	sw $t0, 4($sp) #save i
 	sw $t1, 8($sp) #save j
 	sw $t2, 12($sp) #save x
+	sw $t3, 16($sp) #save a
 	addi $sp, $sp, -16 #move sp 16
 	jal str_lt
 	addi $sp, $sp, 16 #move sp 16
@@ -116,6 +119,7 @@ jWhile:
 	lw $t0, 4($sp) #restore i
 	lw $t1, 8($sp) #restore j
 	lw $t2, 12($sp) #restore x
+	lw $t3, 16($sp) #restore a
 	move $t5, $v0 #return value of str_lt
 	beqz $t5, endJWhile #if (str_lt == 0) end jWhile loop
 	addi $t1, $t1, -1 #j--
@@ -134,17 +138,47 @@ endJWhile:
 	addi $t1, $t1, -1 #j--
 	j qsFor #continue for loop
 breakForLoop:
+	addi $t8, $t0, -1 #i - 1
 	sw $ra ($sp) ##save ra to main
 	sw $t0, 4($sp) #save i
 	sw $t1, 8($sp) #save j
 	sw $t2, 12($sp) #save x
 	sw $s0, 16($sp) #save first
-	sw $s1, 20($sp) #save second
+	sw $s1, 20($sp) #save last
 	addi $sp, $sp, -24 #move sp 24
-	addi $t8, $t0, -1 #i - 1
-	blt $s0, $t8, qsRecursive #if (first < (i-1)) make recursive call
-	addi $t8, $t8, 1 #j + 1
-	blt $t8, $s1, qsRecursive #
+	bge $s0, $t8, skipIRecursion #if (first > (i-1)) skip recursive call
+	move $a0, $s0 #arg0 = first
+	move $a1, $t8 #arg1 = i - 1
+	jal quickSort
+skipIRecursion:
+	addi $sp, $sp, 24 #move sp 24
+	lw $ra ($sp) ##save ra to main
+	lw $t0, 4($sp) #restore i
+	lw $t1, 8($sp) #restore j
+	lw $t2, 12($sp) #restore x
+	lw $s0, 16($sp) #restore first
+	lw $s1, 20($sp) #restore last
+	addi $t8, $t1, 1 #j + 1
+	bgt $t8, $s1, skipJRecursion #if ((j+1) >= last) skipJRecursion
+	sw $ra ($sp) ##save ra to main
+	sw $t0, 4($sp) #save i
+	sw $t1, 8($sp) #save j
+	sw $t2, 12($sp) #save x
+	sw $s0, 16($sp) #save first
+	sw $s1, 20($sp) #save last
+	addi $sp, $sp, -24 #move sp 24
+	move $a0, $t8 #arg0 = j + 1
+	move $a1, $s1 #last
+	jal quickSort
+skipJRecursion:
+	addi $sp, $sp, 24 #move sp 24
+	lw $ra ($sp) ##restore ra to main
+	lw $t0, 4($sp) #restore i
+	lw $t1, 8($sp) #restore j
+	lw $t2, 12($sp) #restore x
+	lw $s0, 16($sp) #restore first
+	lw $s1, 20($sp) #restore last
+	jr $ra
 	
 str_lt:
 	la $t2, ($a0) #string data in a[i]
