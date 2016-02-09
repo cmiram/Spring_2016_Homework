@@ -11,10 +11,11 @@ main:
      li   $v0, 5     # specify system service of Read Integer
      syscall         # Read the number. After this instruction, the number read is in $v0.
      blt  $v0, $zero, main   # Check if the input is a positive integer
-     move $v0, $s3 #store input
+     move $s3, $v0 #store input
      add  $a0, $v0, $zero  # transfer the number to the desired register
       
-     jal fact #you should change this function call to your specific names
+     jal factRecursive #recursive factorial
+     #jal factIterative #iterative factorial
 
      #the factorial number is computed and stored in $v0, copy it to $a1, the original number is in $a0, print both of them them out
      move $a0, $s3
@@ -25,27 +26,37 @@ main:
      li   $v0, 10          # system call for exit
      syscall               # Exit!
      
-fact:
+factRecursive:
 	move $s0, $a0 #x -> load arg into register
 	beqz $s0, returnOne #if (x==0) return 1
-	addi $s0, $s0, -1 #x = x - 1
-	addi $sp, $sp, -12 #move stack over 12
+	addi $sp, $sp, -8 #move stack over 12
 	sw $s0, 0($sp) #store x at beginning of stack
 	sw $ra, 4($sp) #store return address at sp[1]
+	addi $s0, $s0, -1 #x = x - 1
 	move $a0, $s0 #move x-1 to arg0 and make recursive call to fact
-	jal fact
+	jal factRecursive
 	lw $ra, 4($sp) #restore return address
 	lw $s0, 0($sp) #restore x
-	lw $t0, 12($sp) #fact(x-1)
-	mul $t1, $s0, $t0 #x * fact(x-1)
-	addi $sp, $sp, 12 #move stack back
-	sw $t1, 12($sp) #store x * fact(x-1)
-	move $v0, $t1
+	addi $sp, $sp, 8 #move stack back
+	mul $v0, $v0, $s0 #x * fact(x-1)=
 	jr $ra #follow return address
 returnOne:
-	li $t0, 1 #return value
-	sw $t0, 12($sp) #store return value
+	li $v0, 1 #return value
 	jr $ra #follow return address
+	
+factIterative:
+	move $t0, $a0 #factorial
+	li $t1, 0 #x
+	li $t2, 1 #total
+factLoop:
+	addi $t1, $t1, 1 #x+1
+	mul $t2, $t2, $t1 #total = total * (x+1)
+	beq $t1, $t0, endFactLoop #if (x==factorial) end loop
+	j factLoop
+endFactLoop:
+	move $v0, $t2 #move factorial value to return register
+	jr $ra
+	
 
 ###############################################################
 # Subroutine to print the given number and its factorial.

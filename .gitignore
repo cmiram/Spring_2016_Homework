@@ -30,3 +30,8 @@
 
 # Debug files
 *.dSYM/
+
+# Document Files
+*.docx
+*.pdf
+*.zip
