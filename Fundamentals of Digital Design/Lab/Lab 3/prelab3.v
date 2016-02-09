@@ -3,6 +3,7 @@ module EightBitAlu(input[7:0] a, input[7:0] b, input[2:0] sel, output[7:0] f, ou
     reg ovf, take_branch;
     always @(a, b, sel)
     begin
+        f = 0;
         ovf = 0;
         take_branch = 0;
         case(sel)
@@ -15,15 +16,9 @@ module EightBitAlu(input[7:0] a, input[7:0] b, input[2:0] sel, output[7:0] f, ou
             3:  f = a | b;
             4:  f = a >> 1;
             5:  f = a << 1;
-            6:  begin
-                f = a == b;
-                take_branch = f;
-                end
-            7:  begin
-                f = ~(a == b);
-                take_branch = f;
-                end
-        endcase
+            6:  take_branch = a == b;
+            7:  take_branch = ~(a == b);
+                endcase
     end
 endmodule
 
