@@ -3,10 +3,11 @@ module Incrementor(input inc, input clk, input clr, output[31:0] value);
     wire[31:0]dOut;
     DFlipFlop32Bits dFlipFlop32Bits(clk, clr, dIn, dOut);
     
-    always @(inc, dOut, posedge clr) begin
-        if(inc) begin
+    always @(negedge clk, dOut) begin
+        if(inc)
             dIn = dOut + 32'd3;
-        end
+        else
+            dIn = dOut;
         value = dOut;
     end
 endmodule
