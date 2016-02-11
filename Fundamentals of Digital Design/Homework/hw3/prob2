@@ -6,116 +6,123 @@
 :vpi_module "vhdl_sys";
 :vpi_module "v2005_math";
 :vpi_module "va_math";
-S_028023b8 .scope module, "incrementor_tb" "incrementor_tb" 2 25;
+S_027c3558 .scope module, "incrementor_tb" "incrementor_tb" 2 28;
  .timescale 0 0;
-v010aed58_0 .var "clk", 0 0;
-v010aedb0_0 .var "clr", 0 0;
-v010aee08_0 .var "inc", 0 0;
-v027fedf8_0 .net "value", 31 0, v010aed00_0;  1 drivers
-S_010a4a90 .scope module, "incrementor" "Incrementor" 2 28, 2 1 0, S_028023b8;
+v027c0f08_0 .var "clk", 0 0;
+v027c0f60_0 .var "clr", 0 0;
+v027c1640_0 .var "inc", 0 0;
+v027c13d8_0 .net "value", 31 0, v027c1118_0;  1 drivers
+S_011f4bf0 .scope module, "incrementor" "Incrementor" 2 31, 2 1 0, S_027c3558;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "inc"
     .port_info 1 /INPUT 1 "clk"
     .port_info 2 /INPUT 1 "clr"
     .port_info 3 /OUTPUT 32 "value"
-v010a3440_0 .net "clk", 0 0, v010aed58_0;  1 drivers
-v010a3498_0 .net "clr", 0 0, v010aedb0_0;  1 drivers
-v010a34f0_0 .var "dIn", 31 0;
-v010aec50_0 .net "dOut", 31 0, v010a33e8_0;  1 drivers
-v010aeca8_0 .net "inc", 0 0, v010aee08_0;  1 drivers
-v010aed00_0 .var "value", 31 0;
-E_010abdc0/0 .event edge, v010a33e8_0;
-E_010abdc0/1 .event negedge, v02802488_0;
-E_010abdc0 .event/or E_010abdc0/0, E_010abdc0/1;
-S_010a4b60 .scope module, "dFlipFlop32Bits" "DFlipFlop32Bits" 2 4, 2 15 0, S_010a4a90;
+v011f34a0_0 .var "adderTemp", 31 0;
+v011f34f8_0 .net "clk", 0 0, v027c0f08_0;  1 drivers
+v011fb790_0 .net "clr", 0 0, v027c0f60_0;  1 drivers
+v027c1278_0 .var "dIn", 31 0;
+v027c10c0_0 .net "dOut", 31 0, v027c2448_0;  1 drivers
+v027c1380_0 .net "inc", 0 0, v027c1640_0;  1 drivers
+v027c1118_0 .var "value", 31 0;
+v027c1068_0 .net "yToDIn", 31 0, L_027c12d0;  1 drivers
+E_011fcca0/0 .event edge, v027c2448_0;
+E_011fcca0/1 .event negedge, v027c3628_0;
+E_011fcca0 .event/or E_011fcca0/0, E_011fcca0/1;
+S_011f4cc0 .scope module, "dFlipFlop32Bits" "DFlipFlop32Bits" 2 4, 2 18 0, S_011f4bf0;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "clk"
     .port_info 1 /INPUT 1 "clr"
     .port_info 2 /INPUT 32 "d"
     .port_info 3 /OUTPUT 32 "q"
-v02802488_0 .net "clk", 0 0, v010aed58_0;  alias, 1 drivers
-v010a3338_0 .net "clr", 0 0, v010aedb0_0;  alias, 1 drivers
-v010a3390_0 .net "d", 31 0, v010a34f0_0;  1 drivers
-v010a33e8_0 .var "q", 31 0;
-E_010abf50/0 .event negedge, v02802488_0;
-E_010abf50/1 .event posedge, v010a3338_0;
-E_010abf50 .event/or E_010abf50/0, E_010abf50/1;
-    .scope S_010a4b60;
+v027c3628_0 .net "clk", 0 0, v027c0f08_0;  alias, 1 drivers
+v027c2398_0 .net "clr", 0 0, v027c0f60_0;  alias, 1 drivers
+v027c23f0_0 .net "d", 31 0, v027c1278_0;  1 drivers
+v027c2448_0 .var "q", 31 0;
+E_011fcd68/0 .event negedge, v027c3628_0;
+E_011fcd68/1 .event posedge, v027c2398_0;
+E_011fcd68 .event/or E_011fcd68/0, E_011fcd68/1;
+S_027c24a0 .scope module, "mux32Bit2To1" "Mux32Bit2To1" 2 5, 2 14 0, S_011f4bf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "x0"
+    .port_info 1 /INPUT 32 "x1"
+    .port_info 2 /INPUT 1 "sel"
+    .port_info 3 /OUTPUT 32 "y"
+v011f3340_0 .net "sel", 0 0, v027c1640_0;  alias, 1 drivers
+v011f3398_0 .net "x0", 31 0, v027c2448_0;  alias, 1 drivers
+v011f33f0_0 .net "x1", 31 0, v011f34a0_0;  1 drivers
+v011f3448_0 .net "y", 31 0, L_027c12d0;  alias, 1 drivers
+L_027c12d0 .functor MUXZ 32, v027c2448_0, v011f34a0_0, v027c1640_0, C4<>;
+    .scope S_011f4cc0;
 T_0 ;
-    %wait E_010abf50;
-    %load/vec4 v010a3338_0;
+    %wait E_011fcd68;
+    %load/vec4 v027c2398_0;
     %flag_set/vec4 8;
     %jmp/0xz  T_0.0, 8;
     %pushi/vec4 0, 0, 32;
-    %store/vec4 v010a33e8_0, 0, 32;
+    %store/vec4 v027c2448_0, 0, 32;
     %jmp T_0.1;
 T_0.0 ;
-    %load/vec4 v010a3390_0;
-    %store/vec4 v010a33e8_0, 0, 32;
+    %load/vec4 v027c23f0_0;
+    %store/vec4 v027c2448_0, 0, 32;
 T_0.1 ;
     %jmp T_0;
     .thread T_0;
-    .scope S_010a4a90;
+    .scope S_011f4bf0;
 T_1 ;
-    %wait E_010abdc0;
-    %load/vec4 v010aeca8_0;
-    %flag_set/vec4 8;
-    %jmp/0xz  T_1.0, 8;
-    %load/vec4 v010aec50_0;
+    %wait E_011fcca0;
+    %load/vec4 v027c10c0_0;
     %addi 3, 0, 32;
-    %store/vec4 v010a34f0_0, 0, 32;
-    %jmp T_1.1;
-T_1.0 ;
-    %load/vec4 v010aec50_0;
-    %store/vec4 v010a34f0_0, 0, 32;
-T_1.1 ;
-    %load/vec4 v010aec50_0;
-    %store/vec4 v010aed00_0, 0, 32;
+    %store/vec4 v011f34a0_0, 0, 32;
+    %load/vec4 v027c1068_0;
+    %store/vec4 v027c1278_0, 0, 32;
+    %load/vec4 v027c10c0_0;
+    %store/vec4 v027c1118_0, 0, 32;
     %jmp T_1;
     .thread T_1;
-    .scope S_028023b8;
+    .scope S_027c3558;
 T_2 ;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v010aedb0_0, 0, 1;
+    %store/vec4 v027c0f60_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v010aedb0_0, 0, 1;
+    %store/vec4 v027c0f60_0, 0, 1;
     %end;
     .thread T_2;
-    .scope S_028023b8;
+    .scope S_027c3558;
 T_3 ;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v010aed58_0, 0, 1;
+    %store/vec4 v027c0f08_0, 0, 1;
 T_3.0 ;
     %delay 5, 0;
-    %load/vec4 v010aed58_0;
+    %load/vec4 v027c0f08_0;
     %inv;
-    %store/vec4 v010aed58_0, 0, 1;
+    %store/vec4 v027c0f08_0, 0, 1;
     %jmp T_3.0;
     %end;
     .thread T_3;
-    .scope S_028023b8;
+    .scope S_027c3558;
 T_4 ;
-    %vpi_call 2 42 "$monitor", "%d inc=%b clk=%b clr=%b value=%d", $time, v010aee08_0, v010aed58_0, v010aedb0_0, v027fedf8_0 {0 0 0};
+    %vpi_call 2 45 "$monitor", "%d inc=%b clk=%b clr=%b value=%d", $time, v027c1640_0, v027c0f08_0, v027c0f60_0, v027c13d8_0 {0 0 0};
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v010aee08_0, 0, 1;
+    %store/vec4 v027c1640_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v010aee08_0, 0, 1;
+    %store/vec4 v027c1640_0, 0, 1;
     %delay 20, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v010aee08_0, 0, 1;
+    %store/vec4 v027c1640_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v010aee08_0, 0, 1;
+    %store/vec4 v027c1640_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v010aee08_0, 0, 1;
+    %store/vec4 v027c1640_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v010aee08_0, 0, 1;
+    %store/vec4 v027c1640_0, 0, 1;
     %delay 10, 0;
-    %vpi_call 2 49 "$finish" {0 0 0};
+    %vpi_call 2 52 "$finish" {0 0 0};
     %end;
     .thread T_4;
 # The file index is used to find the file name in the following table.
