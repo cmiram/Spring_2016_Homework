@@ -67,7 +67,7 @@ static void getargs(char cmd[], int *argcp, char *argv[])
         /* getword converts word into null-terminated string */
         argv[i++] = cmdp;
         /* "end" brings us only to the '\0' at end of string */
-	cmdp = end + 1;
+        cmdp = end + 1;
     }
     argv[i] = NULL; /* Create additional null word at end for safety. */
     *argcp = i;
@@ -106,15 +106,15 @@ int main(int argc, char *argv[])
     while (1) {
         printf("%% "); /* printf uses %d, %s, %x, etc.  See 'man 3 printf' */
         fflush(stdout); /* flush from output buffer to terminal itself */
-	getargs(cmd, &childargc, childargv); /* childargc and childargv are
+        getargs(cmd, &childargc, childargv); /* childargc and childargv are
             output args; on input they have garbage, but getargs sets them. */
         /* Check first for built-in commands. */
-	if ( childargc > 0 && strcmp(childargv[0], "exit") == 0 )
+        if ( childargc > 0 && strcmp(childargv[0], "exit") == 0 )
             exit(0);
-	else if ( childargc > 0 && strcmp(childargv[0], "logout") == 0 )
+        else if ( childargc > 0 && strcmp(childargv[0], "logout") == 0 )
             exit(0);
         else
-	    execute(childargc, childargv);
+            execute(childargc, childargv);
     }
     /* NOT REACHED */
 }
