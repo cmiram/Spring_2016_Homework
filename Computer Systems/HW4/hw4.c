@@ -38,9 +38,9 @@ static char * getword(char * begin, char **end_ptr) {
     *end_ptr = end;
     if (begin[0] == '$') { /* if this is a variable to be expanded */
         begin = getenv(begin+1); /* begin+1, to skip past '$' */
-	if (begin == NULL) {
-	    perror("getenv");
-	    begin = "UNDEFINED";
+        if (begin == NULL) {
+            perror("getenv");
+            begin = "UNDEFINED";
         }
     }
     return begin; /* This word is now a null-terminated string.  return it. */
@@ -63,7 +63,7 @@ static void getargs(char cmd[], int *argcp, char *argv[])
         printf("Couldn't read from standard input. End of file? Exiting ...\n");
         exit(1);  /* any non-zero value for exit means failure. */
     }
-    while ( (cmdp = getword(cmdp, &end)) != NULL ) { /* end is output param */
+    while ( (cmdp = getword(cmdp, &end)) != NULL && *cmdp != '#' && *cmdp != '|' ) { /* end is output param */
         /* getword converts word into null-terminated string */
         argv[i++] = cmdp;
         /* "end" brings us only to the '\0' at end of string */
@@ -76,6 +76,8 @@ static void getargs(char cmd[], int *argcp, char *argv[])
 static void execute(int argc, char *argv[])
 {
     pid_t childpid; /* child process ID */
+    int pfds[2];
+    pipe(pfds);
 
     childpid = fork();
     if (childpid == -1) { /* in parent (returned error) */
@@ -86,6 +88,10 @@ static void execute(int argc, char *argv[])
         /* Executes command in argv[0];  It searches for that file in
 	 *  the directories specified by the environment variable PATH.
          */
+        close(0);
+        close(pfds[0]);
+        close(pfds[1]);
+        dup(pfds[0]);
         if (-1 == execvp(argv[0], argv)) {
           perror("execvp");
           printf("  (couldn't find command)\n");
@@ -93,8 +99,16 @@ static void execute(int argc, char *argv[])
 	/* NOT REACHED unless error occurred */
         exit(1);
     } else /* parent:  in parent, childpid was set to pid of child process */
+        close(1);
+        close(pfds[0]);
+        close(pfds[1]);
+        dup(pfds[1]);
         waitpid(childpid, NULL, 0);  /* wait until child process finishes */
     return;
+}
+
+void interrupt_handler(int signum) {
+    kill(signum, SIGINT);
 }
 
 int main(int argc, char *argv[])
@@ -102,6 +116,11 @@ int main(int argc, char *argv[])
     char cmd[MAXLINE];
     char *childargv[MAXARGS];
     int childargc;
+    signal(SIGINT, interrupt_handler);
+    
+    if (argc > 1) {
+        freopen(argv[1], "r", stdin);
+    }
 
     while (1) {
         printf("%% "); /* printf uses %d, %s, %x, etc.  See 'man 3 printf' */
