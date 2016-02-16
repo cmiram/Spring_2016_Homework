@@ -22,7 +22,7 @@ module reg_file_tb;
     reg_file Reg_file(rst, clk, wr_en, rd_en, rd0_addr, rd1_addr, wr_addr, wr_data, rd0_data, rd1_data);
     
     initial begin
-        rst = 0;
+        rst = 1;
         #10 rst = 0;
     end
     
