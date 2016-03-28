@@ -1,0 +1,256 @@
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.Mux2To1TB
+# //  ModelSim PE Student Edition 10.4a Apr  7 2015 
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
+# vsim -gui 
+# Start time: 18:35:42 on Mar 17,2016
+# Loading work.Mux2To1TB
+# Loading work.Mux2To1
+add wave -position end  sim:/Mux2To1TB/a
+add wave -position end  sim:/Mux2To1TB/b
+add wave -position end  sim:/Mux2To1TB/sel
+add wave -position end  sim:/Mux2To1TB/z
+run
+#                    0 a=x b=x sel=x z=x
+#                   10 a=0 b=1 sel=0 z=0
+#                   20 a=0 b=1 sel=1 z=1
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Mux2To1.v(23)
+#    Time: 30 ns  Iteration: 0  Instance: /Mux2To1TB
+# 1
+# Break in Module Mux2To1TB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Mux2To1.v line 23
+# could not find interpreter "ScintillaTk"
+quit -sim
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v failed with 2 errors.
+# Compile of RegisterFile.v was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.Register32BitTB
+# vsim 
+# Start time: 18:42:20 on Mar 17,2016
+# Loading work.Register32BitTB
+# Loading work.Register32Bit
+# ** Warning: (vsim-3015) F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(15): [PCDPC] - Port size (32) does not match connection size (1) for port 'write_data'. The port definition is at: F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /Register32BitTB/register File: F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v
+# ** Warning: (vsim-3015) F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(15): [PCDPC] - Port size (32) does not match connection size (1) for port 'data'. The port definition is at: F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /Register32BitTB/register File: F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(35)
+#    Time: 30 ns  Iteration: 0  Instance: /Register32BitTB
+# 1
+# Break in Module Register32BitTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v line 35
+# could not find interpreter "ScintillaTk"
+add wave -position end  sim:/Register32BitTB/clk
+add wave -position end  sim:/Register32BitTB/rst
+add wave -position end  sim:/Register32BitTB/load_en
+add wave -position end  sim:/Register32BitTB/write_data
+add wave -position end  sim:/Register32BitTB/data
+restart
+# ** Warning: (vsim-3015) F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(15): [PCDPC] - Port size (32) does not match connection size (1) for port 'write_data'. The port definition is at: F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /Register32BitTB/register File: F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v
+# ** Warning: (vsim-3015) F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(15): [PCDPC] - Port size (32) does not match connection size (1) for port 'data'. The port definition is at: F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /Register32BitTB/register File: F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(35)
+#    Time: 30 ns  Iteration: 0  Instance: /Register32BitTB
+# 1
+# Break in Module Register32BitTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v line 35
+# could not find interpreter "ScintillaTk"
+quit -sim
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.Register32BitTB
+# vsim 
+# Start time: 18:43:49 on Mar 17,2016
+# Loading work.Register32BitTB
+# Loading work.Register32Bit
+add wave -position end  sim:/Register32BitTB/clk
+add wave -position end  sim:/Register32BitTB/rst
+add wave -position end  sim:/Register32BitTB/load_en
+add wave -position end  sim:/Register32BitTB/write_data
+add wave -position end  sim:/Register32BitTB/data
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(36)
+#    Time: 30 ns  Iteration: 0  Instance: /Register32BitTB
+# 1
+# Break in Module Register32BitTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v line 36
+# could not find interpreter "ScintillaTk"
+quit -sim
+# Compile of Register32Bit.v was successful.
+vsim -gui work.Register32BitTB
+# vsim 
+# Start time: 18:45:05 on Mar 17,2016
+# Loading work.Register32BitTB
+# Loading work.Register32Bit
+add wave -position end  sim:/Register32BitTB/clk
+add wave -position end  sim:/Register32BitTB/rst
+add wave -position end  sim:/Register32BitTB/load_en
+add wave -position end  sim:/Register32BitTB/write_data
+add wave -position end  sim:/Register32BitTB/data
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v(36)
+#    Time: 30 ns  Iteration: 0  Instance: /Register32BitTB
+# 1
+# Break in Module Register32BitTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v line 36
+# could not find interpreter "ScintillaTk"
+# Compile of RegisterFile.v was successful.
+vsim -gui work.RegisterFileTB
+# vsim 
+# Start time: 18:52:35 on Mar 17,2016
+# Loading work.RegisterFileTB
+# Loading work.RegisterFile
+add wave -position end  sim:/RegisterFileTB/rst
+add wave -position end  sim:/RegisterFileTB/clk
+add wave -position end  sim:/RegisterFileTB/wr_en
+add wave -position end  sim:/RegisterFileTB/rd0_addr
+add wave -position end  sim:/RegisterFileTB/rd1_addr
+add wave -position end  sim:/RegisterFileTB/wr_addr
+add wave -position end  sim:/RegisterFileTB/wr_data
+add wave -position end  sim:/RegisterFileTB/rd0_data
+add wave -position end  sim:/RegisterFileTB/rd1_data
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/RegisterFile.v(55)
+#    Time: 60 ns  Iteration: 0  Instance: /RegisterFileTB
+# 1
+# Break in Module RegisterFileTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/RegisterFile.v line 55
+# could not find interpreter "ScintillaTk"
+quit -sim
+# Compile of ControlUnit.v failed with 2 errors.
+# Compile of ControlUnit.v failed with 27 errors.
+# Compile of ControlUnit.v was successful.
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of ControlUnit.v was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of ControlUnit.v failed with 9 errors.
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of ControlUnit.v failed with 1 errors.
+# 4 compiles, 1 failed with 1 error.
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of ControlUnit.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.RegisterFileTB
+# vsim 
+# Start time: 19:41:15 on Mar 17,2016
+# Loading work.RegisterFileTB
+# Loading work.RegisterFile
+add wave -position end  sim:/RegisterFileTB/rst
+add wave -position end  sim:/RegisterFileTB/clk
+add wave -position end  sim:/RegisterFileTB/wr_en
+add wave -position end  sim:/RegisterFileTB/rd0_addr
+add wave -position end  sim:/RegisterFileTB/rd1_addr
+add wave -position end  sim:/RegisterFileTB/wr_addr
+add wave -position end  sim:/RegisterFileTB/wr_data
+add wave -position end  sim:/RegisterFileTB/rd0_data
+add wave -position end  sim:/RegisterFileTB/rd1_data
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/RegisterFile.v(55)
+#    Time: 60 ns  Iteration: 0  Instance: /RegisterFileTB
+# 1
+# Break in Module RegisterFileTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/RegisterFile.v line 55
+# could not find interpreter "ScintillaTk"
+quit -sim
+vsim -gui work.ControlUnitTB
+# vsim 
+# Start time: 19:41:47 on Mar 17,2016
+# Loading work.ControlUnitTB
+# Loading work.ControlUnit
+add wave -position end  sim:/ControlUnitTB/opcode
+add wave -position end  sim:/ControlUnitTB/RegDst
+add wave -position end  sim:/ControlUnitTB/Jump
+add wave -position end  sim:/ControlUnitTB/Branch
+add wave -position end  sim:/ControlUnitTB/MemRead
+add wave -position end  sim:/ControlUnitTB/MemtoReg
+add wave -position end  sim:/ControlUnitTB/MemWrite
+add wave -position end  sim:/ControlUnitTB/ALUsrc
+add wave -position end  sim:/ControlUnitTB/RegWrite
+add wave -position end  sim:/ControlUnitTB/ALUop
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ControlUnit.v(96)
+#    Time: 70 ns  Iteration: 0  Instance: /ControlUnitTB
+# 1
+# Break in Module ControlUnitTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ControlUnit.v line 96
+# could not find interpreter "ScintillaTk"
+quit -sim
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ALUControlUnit.v failed with 9 errors.
+# 5 compiles, 1 failed with 9 errors.
+# Compile of ALUControlUnit.v failed with 1 errors.
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ALUControlUnit.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.ALUControlUnitTB
+# vsim 
+# Start time: 19:59:26 on Mar 17,2016
+# Loading work.ALUControlUnitTB
+# Loading work.ALUControlUnit
+add wave -position end  sim:/ALUControlUnitTB/ALUop
+add wave -position end  sim:/ALUControlUnitTB/funct
+add wave -position end  sim:/ALUControlUnitTB/ALU_operation_signal
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ALUControlUnit.v(42)
+#    Time: 50 ns  Iteration: 0  Instance: /ALUControlUnitTB
+# 1
+# Break in Module ALUControlUnitTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ALUControlUnit.v line 42
+# could not find interpreter "ScintillaTk"
+quit -sim
+# Compile of Mux2To1.v was successful.
+# Compile of Register32Bit.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of ALUControlUnit.v was successful.
+# Compile of ALU.v was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.ALUTB
+# vsim 
+# Start time: 20:15:19 on Mar 17,2016
+# Loading work.ALUTB
+# Loading work.ALU
+add wave -position end  sim:/ALUTB/control
+add wave -position end  sim:/ALUTB/op1
+add wave -position end  sim:/ALUTB/op2
+add wave -position end  sim:/ALUTB/ALUresult
+add wave -position end  sim:/ALUTB/zero
+run
+# ** Note: $finish    : F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ALU.v(41)
+#    Time: 60 ns  Iteration: 0  Instance: /ALUTB
+# 1
+# Break in Module ALUTB at F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ALU.v line 41
+# could not find interpreter "ScintillaTk"
+# End time: 20:25:38 on Mar 17,2016, Elapsed time: 0:10:19
+# Errors: 1, Warnings: 0

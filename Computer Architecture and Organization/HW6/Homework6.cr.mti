@@ -1,0 +1,49 @@
+{F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Mux2To1.v} {1 {vlog -work work -stats=none {F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Mux2To1.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Mux2To1
+-- Compiling module Mux2To1TB
+
+Top level modules:
+	Mux2To1TB
+
+} {} {}} {F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ControlUnit.v} {1 {vlog -work work -stats=none {F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\HW6\ControlUnit.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ControlUnit
+-- Compiling module ControlUnitTB
+
+Top level modules:
+	ControlUnitTB
+
+} {} {}} {F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/RegisterFile.v} {1 {vlog -work work -stats=none {F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/RegisterFile.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module RegisterFile
+-- Compiling module RegisterFileTB
+
+Top level modules:
+	RegisterFileTB
+
+} {} {}} {F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v} {1 {vlog -work work -stats=none {F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/Register32Bit.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Register32Bit
+-- Compiling module Register32BitTB
+
+Top level modules:
+	Register32BitTB
+
+} {} {}} {F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ALU.v} {1 {vlog -work work -stats=none {F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\HW6\ALU.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ALU
+-- Compiling module ALUTB
+
+Top level modules:
+	ALUTB
+
+} {} {}} {F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6/ALUControlUnit.v} {1 {vlog -work work -stats=none {F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\HW6\ALUControlUnit.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ALUControlUnit
+-- Compiling module ALUControlUnitTB
+
+Top level modules:
+	ALUControlUnitTB
+
+} {} {}}
