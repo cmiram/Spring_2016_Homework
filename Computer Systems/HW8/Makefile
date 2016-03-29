@@ -7,7 +7,7 @@ run: ${FILE}
 # Newer versions of gcc allow you to simply invoke '-pthread' instead
 #   of '-lpthread'
 ${FILE}: ${FILE}.c
-	gcc -g -O0 -o ${FILE} ${FILE}.c -lpthread
+	gcc -g -O0 -o ${FILE} ${FILE}.c -lpthread -I .
 
 gdb: ${FILE}
 	gdb ${FILE}

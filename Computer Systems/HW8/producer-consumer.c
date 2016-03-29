@@ -13,20 +13,14 @@
 //   (gdb) print buf  # and so on
 
 #include <stdio.h>
+#include <unistd.h> //for sleep
+#include <stdlib.h> //for rand
 #include <pthread.h> // Needed for pthread_mutex_lock(), etc.
+#include <mysem.c> //my implementation of semaphores
 
-typedef struct sem_t {
-  int count;
-  pthread_mutex_t lock;
-} sem_t;
-
-//Part 1 functions
-int sem_init(struct sem_t *sem, int ignore, int init);
-int sem_post(struct sem_t *sem);
-int sem_wait(struct sem_t *sem);
-
-//Part 1 helper function
-void block_until_count_increases(struct sem_t *sem, int last_count);
+mysem sem_producer;  // Should count number of empty slots available
+mysem sem_consumer;  // Should count number of items in the buffer
+pthread_mutex_t mut_buf = PTHREAD_MUTEX_INITIALIZER;  // Lock for anybody touching buf
 
 //Part 2 helper functions
 void push_buf(int work_item);
@@ -35,10 +29,6 @@ int take_from_buf();
 //Part 3 declarations
 void *producer(void *arg);
 void *consumer(void *arg);
-
-sem_t sem_producer;  // Should count number of empty slots available
-sem_t sem_consumer;  // Should count number of items in the buffer
-pthread_mutex_t mut_buf = PTHREAD_MUTEX_INITIALIZER;  // Lock for anybody touching buf
 
 int buffer[4] = {0, 0, 0, 0};
 
@@ -63,6 +53,13 @@ int main() {
     pthread_create(&threadProd3, NULL, producer, NULL);
     pthread_t threadCons3;
     pthread_create(&threadCons3, NULL, consumer, NULL);
+    
+    pthread_join(threadProd1, NULL);
+    pthread_join(threadCons1, NULL);
+    pthread_join(threadProd2, NULL);
+    pthread_join(threadCons2, NULL);
+    pthread_join(threadProd3, NULL);
+    pthread_join(threadCons3, NULL);
     
     while (1) {
         
@@ -96,47 +93,15 @@ void *consumer(void *arg) {
         fflush(stdout);  // Force printing now; don't wait for the newline
     }
 }
-  
-int sem_init(struct sem_t *sem, int ignore, int init) {
-    sem->count = init;
-    pthread_mutex_init(&(sem->lock), NULL);
-}
-    
-int sem_post(struct sem_t *sem) {
-    pthread_mutex_lock(&(sem->lock));
-    sem->count += 1;
-    pthread_mutex_unlock(&(sem->lock));
-}
-    
-int sem_wait(struct sem_t *sem) {
-    pthread_mutex_lock(&(sem->lock));
-    int last_count = sem->count;
-    (sem->count)--;
-    
-    if (sem->count < 0) {
-        pthread_mutex_unlock(&(sem->lock));
-        block_until_count_increases(sem, last_count);
-        pthread_mutex_lock(&(sem->lock));
-    }
-    pthread_mutex_unlock(&(sem->lock));
-}
-
-void block_until_count_increases(struct sem_t *sem, int last_count) {
-    pthread_mutex_lock(&(sem->lock));
-    while (sem->count < last_count) {
-        pthread_mutex_unlock(&(sem->lock));
-    }
-    pthread_mutex_unlock(&(sem->lock));
-}
 
 void push_buf(int work_item) {
     int i = 0;
     while(buffer[i] != 0) {
         if (i == 3) {
-            i = 0;
+            break;
         }
         else {
-            i += 1;
+            i++;
         }
     }
     buffer[i] = work_item;
@@ -147,10 +112,10 @@ int take_from_buf() {
     int result;
     while(buffer[i] == 0) {
         if (i==3) {
-            i = 0;
+            break;
         }
         else {
-            i += 1;
+            i++;
         }
     }
     result = buffer[i];
