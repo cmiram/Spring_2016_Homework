@@ -36,7 +36,7 @@ int main() {
     // ... uses pthread_create to start producer and consumer
     // WARNING:  the primary thread runs main().  When main exits, the primary
     //             thread exits
-    int semProd = sem_init(&sem_producer, 0, 1);
+    int semProd = sem_init(&sem_producer, 0, 4);
     int semCons = sem_init(&sem_consumer, 0, 0);
     
     pthread_t threadProd1;
@@ -60,10 +60,6 @@ int main() {
     pthread_join(threadCons2, NULL);
     pthread_join(threadProd3, NULL);
     pthread_join(threadCons3, NULL);
-    
-    while (1) {
-        
-    }  // Don't let the primary thread exit
 }
 
 void *producer(void *arg) {
@@ -74,7 +70,9 @@ void *producer(void *arg) {
         pthread_mutex_lock(&mut_buf);
         push_buf(work_item++);  // inside critical section with mut_buf lock
         pthread_mutex_unlock(&mut_buf);
+        //printf("\nPre-Producer Post\n");
         sem_post(&sem_consumer);  // Tell the consumer there's a new work item
+        //printf("\nPost-Producer Post\n");
     }
 }
 
@@ -84,39 +82,39 @@ void *consumer(void *arg) {
         int work_item;
         sleep( rand() % 5 );
         sem_wait(&sem_consumer);
+        //printf("\nAfter Cons Sem_Wait\n");
         pthread_mutex_lock(&mut_buf);
         work_item = take_from_buf();
         pthread_mutex_unlock(&mut_buf);
-        sem_post(&sem_producer);
-
         printf("%d ", work_item);
         fflush(stdout);  // Force printing now; don't wait for the newline
+        sem_post(&sem_producer);
+
     }
 }
 
 void push_buf(int work_item) {
     int i = 0;
-    while(buffer[i] != 0) {
-        if (i == 3) {
-            break;
-        }
-        else {
-            i++;
-        }
+    while(buffer[i] != 0 && i <3) {
+        i++;
+    }
+    if (buffer[i] != 0) {
+        printf("\nPushing Error!\n");
+        exit(-1);
     }
     buffer[i] = work_item;
+    //printf("\n[%d, %d, %d, %d]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
 }
 
 int take_from_buf() {
     int i = 0;
     int result;
-    while(buffer[i] == 0) {
-        if (i==3) {
-            break;
-        }
-        else {
-            i++;
-        }
+    while(buffer[i] == 0 && i < 3) {
+        i++;
+    }
+    if (buffer[i] == 0) {
+        printf("\nTaking Error!\n");
+        exit(-1);
     }
     result = buffer[i];
     buffer[i] = 0;
