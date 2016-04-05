@@ -11,8 +11,9 @@ struct cacheLine {
 
 struct cacheLine *firstRow;
 int maxCacheIndex;
-int testSet[] = {0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80,
-    0, 4, 8, 12, 16, 71, 3, 41, 81, 39, 38, 71, 15, 39, 11, 51, 57, 41};
+int testSet[] = {0,4,16,132,232,160,1024,20,140,532,128,2180};
+//{0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80,
+  //  0, 4, 8, 12, 16, 71, 3, 41, 81, 39, 38, 71, 15, 39, 11, 51, 57, 41};
 
 int isHitOrMiss(int k, int tag, int set);
 int itemsInCache();
@@ -28,19 +29,19 @@ void nWaySetAssociative(int cacheSize, int lineSize, int n);
 void fullyAssociative(int cacheSize, int lineSize);
 
 int main() {
-    testRun1();
+    /*testRun1();
     printf("\n\n");
     firstRow = NULL;
-    
+    */
     testRun2();
     printf("\n\n");
     firstRow = NULL;
-    
+    /*
     testRun3();
     printf("\n\n");
     firstRow = NULL;
-    
-    testRun4();
+    */
+    //testRun4();
     return 0;
 }
 
@@ -49,7 +50,7 @@ void testRun1() {
 }
 
 void testRun2() {
-    nWaySetAssociative(64, 8, 2);
+    nWaySetAssociative(256, 8, 2);
 }
 
 void testRun3() {
@@ -180,7 +181,7 @@ void nWaySetAssociative(int cacheSize, int lineSize, int n) {
     int tag, set, tagSetTemp, offset, i;
     int loopControl = 39;
     isHit = 0;
-    for(i=0; i<39; i++) {
+    for(i=0; i<12; i++) {
         offset = testSet[i] % lineSize;
         tagSetTemp = testSet[i] / lineSize;
         tag = tagSetTemp / k;
