@@ -1,0 +1,8 @@
+module PC_Branching(input clk, input clr, input[31:0] next, output reg[31:0] pc);
+
+    always @(posedge clk, posedge clr)
+        if (clr)
+            pc = 32'd0;
+        else
+            pc = next;
+endmodule

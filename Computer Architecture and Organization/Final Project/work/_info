@@ -1,0 +1,579 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/HW6
+vAdder
+Z0 !s110 1461026557
+!i10b 1
+!s100 _7iNl@bMehPe<f75]3?FP0
+I;=_Id3fA9eGKB0:hNIR=X0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project
+w1460916177
+8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Adder.v
+FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Adder.v
+L0 2
+Z3 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z4 !s108 1461026557.000000
+!s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Adder.v|
+!s101 -O0
+!i113 1
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@adder
+vALU
+R0
+!i10b 1
+!s100 V0:UV9Ync`1KR^j;]HCQB1
+IMb_KaIVOE[jI<b^Tnf0a?2
+R1
+R2
+Z6 w1461024372
+Z7 8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ALU.v
+Z8 FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ALU.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+Z9 !s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ALU.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ALU.v|
+!s101 -O0
+!i113 1
+R5
+n@a@l@u
+vALUControlUnit
+R0
+!i10b 1
+!s100 <4MOnW>KBXEkZ4HJneN?G3
+IB9311@Gge1N;0;=NldN<@0
+R1
+R2
+Z11 w1458259155
+Z12 8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ALUControlUnit.v
+Z13 FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ALUControlUnit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+Z14 !s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ALUControlUnit.v|
+Z15 !s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ALUControlUnit.v|
+!s101 -O0
+!i113 1
+R5
+n@a@l@u@control@unit
+vALUControlUnitTB
+R0
+!i10b 1
+!s100 1FiHkjnZ>?2SgFoVbGG`R2
+I2SZo0mQO6UI::XgNU]VS70
+R1
+R2
+R11
+R12
+R13
+L0 25
+R3
+r1
+!s85 0
+31
+R4
+R14
+R15
+!s101 -O0
+!i113 1
+R5
+n@a@l@u@control@unit@t@b
+vALUTB
+R0
+!i10b 1
+!s100 A@hJTGMXzBPXTj_Df3MJG3
+I1:;eXinVJDeT?K[:5F6O^2
+R1
+R2
+R6
+R7
+R8
+L0 19
+R3
+r1
+!s85 0
+31
+R4
+R9
+R10
+!s101 -O0
+!i113 1
+R5
+n@a@l@u@t@b
+vAnd
+Z16 !s110 1461026558
+!i10b 1
+!s100 An;7S6hEbHiA6`<3g=MS=0
+I41_IO<OMzV6CLL`HHBOK_0
+R1
+R2
+w1461019727
+8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/And.v
+FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/And.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z17 !s108 1461026558.000000
+!s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/And.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/And.v|
+!s101 -O0
+!i113 1
+R5
+n@and
+vControlUnit
+R0
+!i10b 1
+!s100 @;jn1SgzVl:=NNEEEDfD80
+I4J7ol>ne@Bd[h1^C`?ZJg2
+R1
+R2
+Z18 w1461025865
+Z19 8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ControlUnit.v
+Z20 FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ControlUnit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+Z21 !s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ControlUnit.v|
+Z22 !s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ControlUnit.v|
+!s101 -O0
+!i113 1
+R5
+n@control@unit
+vControlUnitTB
+R0
+!i10b 1
+!s100 JY9_k3LV5=E9S1=PUKklC2
+ID66GW`3?=eaHXhXcLM@n=1
+R1
+R2
+R18
+R19
+R20
+L0 78
+R3
+r1
+!s85 0
+31
+R4
+R21
+R22
+!s101 -O0
+!i113 1
+R5
+n@control@unit@t@b
+vcpu
+R16
+!i10b 1
+!s100 3=zZ;8c@fSF]EK`8VH76H2
+I:PSYhN>SVg3UBooLkOYRj0
+R1
+R2
+w1461026541
+8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/cpu.v
+FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/cpu.v
+L0 1
+R3
+r1
+!s85 0
+31
+R17
+!s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/cpu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/cpu.v|
+!s101 -O0
+!i113 1
+R5
+vcpu_datapath
+!s110 1460929441
+!i10b 1
+!s100 =WLmDlSQ[Wh;7WfP92RlU0
+IjIW1IcEQfJezVOco:U7NQ0
+R1
+R2
+w1460929436
+8F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\cpu.v
+FF:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\cpu.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1460929441.000000
+!s107 F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\cpu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\cpu.v|
+!s101 -O0
+!i113 1
+R5
+vcpu_tb
+R16
+!i10b 1
+!s100 0Gg1DfhC9zaOMG=8zFJ<^3
+InYOEHmBEDYN7nO;TK9MXz2
+R1
+R2
+w1461026548
+8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/cpu_tb.v
+FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/cpu_tb.v
+L0 4
+R3
+r1
+!s85 0
+31
+R17
+!s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/cpu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/cpu_tb.v|
+!s101 -O0
+!i113 1
+R5
+vcpu_TB
+!s110 1461025602
+!i10b 1
+!s100 f640eM;jDi2C;ME`Sl2BA3
+I@hGTnd`gd03MWCIGUM>3J2
+R1
+R2
+w1461025598
+8F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\cpu_tb.v
+FF:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\cpu_tb.v
+L0 4
+R3
+r1
+!s85 0
+31
+!s108 1461025602.000000
+!s107 F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\cpu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\cpu_tb.v|
+!s101 -O0
+!i113 1
+R5
+ncpu_@t@b
+vMemory
+R16
+!i10b 1
+!s100 RE`J^la5MEU<`zla1Recm0
+I^:I9Ld95[jOZ[9PZkYh3B1
+R1
+R2
+w1460933193
+8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/memory.v
+FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/memory.v
+L0 8
+R3
+r1
+!s85 0
+31
+R17
+!s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/memory.v|
+!s101 -O0
+!i113 1
+R5
+n@memory
+vMux2To1
+!s110 1460922539
+!i10b 1
+!s100 80IiTR]nNligFD:PU:=W<0
+IBVA_RJc1VXzLXH:Yg72f60
+R1
+R2
+w1460922536
+Z23 8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Mux2To1.v
+Z24 FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Mux2To1.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1460922539.000000
+Z25 !s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Mux2To1.v|
+Z26 !s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Mux2To1.v|
+!s101 -O0
+!i113 1
+R5
+n@mux2@to1
+vMux2To1TB
+R0
+!i10b 1
+!s100 ^4G<3Y248ORD[bAI@l^TL1
+IUikZO`N8hPYSPzIGO[n6W2
+R1
+R2
+Z27 w1461024027
+R23
+R24
+L0 10
+R3
+r1
+!s85 0
+31
+R4
+R25
+R26
+!s101 -O0
+!i113 1
+R5
+n@mux2@to1@t@b
+vMux32Bit2To1
+R0
+!i10b 1
+!s100 [@N1S^HBNM?QRY5[EJYbN1
+IO5>RnUobF6HS3b38dLWGI0
+R1
+R2
+R27
+R23
+R24
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R25
+R26
+!s101 -O0
+!i113 1
+R5
+n@mux32@bit2@to1
+vMux5Bit2To1
+R0
+!i10b 1
+!s100 fQmU1>TVTVGdZn^UjBZV=2
+IQkBgh`[J?<kg3]VOW_?H_3
+R1
+R2
+R27
+R23
+R24
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+R25
+R26
+!s101 -O0
+!i113 1
+R5
+n@mux5@bit2@to1
+vPC_Branching
+!s110 1460918416
+!i10b 1
+!s100 Xl<a3Sm;zD[9U8jX][gM>2
+I@8`MO;gga<ld0W]f_PJ3k2
+R1
+R2
+w1460918413
+8F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\PC.v
+FF:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\PC.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1460918416.000000
+!s107 F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:\Programs - School\Spring_2016_Homework\Computer Architecture and Organization\Final Project\PC.v|
+!s101 -O0
+!i113 1
+R5
+n@p@c_@branching
+vProgramCounter
+R16
+!i10b 1
+!s100 7B?I9Q<cFVfcW?<2[IL`z2
+I99N04hN478KVh>Z=XX2c>1
+R1
+R2
+w1461022662
+8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/PC.v
+FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/PC.v
+L0 1
+R3
+r1
+!s85 0
+31
+R17
+!s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/PC.v|
+!s101 -O0
+!i113 1
+R5
+n@program@counter
+vRegister32Bit
+R0
+!i10b 1
+!s100 8[CH_oh13W:^P;00Q_bL60
+IfkN[cn7dK94?;NB0AK1Ve0
+R1
+R2
+Z28 w1458254678
+Z29 8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Register32Bit.v
+Z30 FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Register32Bit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+Z31 !s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Register32Bit.v|
+Z32 !s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/Register32Bit.v|
+!s101 -O0
+!i113 1
+R5
+n@register32@bit
+vRegister32BitTB
+R0
+!i10b 1
+!s100 ^cNDn6W<FnXP:KV^AAnGA3
+IDCBFe1<^E@X^fZ;6E]cM@0
+R1
+R2
+R28
+R29
+R30
+L0 11
+R3
+r1
+!s85 0
+31
+R4
+R31
+R32
+!s101 -O0
+!i113 1
+R5
+n@register32@bit@t@b
+vRegisterFile
+R0
+!i10b 1
+!s100 2]5i8^?UBjh5Q;9>JDB`h2
+I`;VVc6Pm:@mU:a4M49XPn1
+R1
+R2
+Z33 w1458255130
+Z34 8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/RegisterFile.v
+Z35 FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/RegisterFile.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+Z36 !s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/RegisterFile.v|
+Z37 !s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/RegisterFile.v|
+!s101 -O0
+!i113 1
+R5
+n@register@file
+vRegisterFileTB
+R0
+!i10b 1
+!s100 XZANlXhkKYET0e5<1l91h3
+I7??i4ZRkk3eaCL`8Q]Y_e3
+R1
+R2
+R33
+R34
+R35
+L0 18
+R3
+r1
+!s85 0
+31
+R4
+R36
+R37
+!s101 -O0
+!i113 1
+R5
+n@register@file@t@b
+vShiftLeft2
+R16
+!i10b 1
+!s100 =B^Of[aF003bjeoNfk88S0
+IAimE>RSc94QUaROgY9SQj0
+R1
+R2
+Z38 w1461025041
+Z39 8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ShiftLeft2.v
+Z40 FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ShiftLeft2.v
+L0 1
+R3
+r1
+!s85 0
+31
+R17
+Z41 !s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ShiftLeft2.v|
+Z42 !s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/ShiftLeft2.v|
+!s101 -O0
+!i113 1
+R5
+n@shift@left2
+vShiftLeft26Bit
+R16
+!i10b 1
+!s100 =?aZg0cT5DP^EB0gd@G;^2
+I@=Hb58f_^<A:jb^@hnmEh2
+R1
+R2
+R38
+R39
+R40
+L0 5
+R3
+r1
+!s85 0
+31
+R17
+R41
+R42
+!s101 -O0
+!i113 1
+R5
+n@shift@left26@bit
+vSignExtend
+R16
+!i10b 1
+!s100 N5^5nAoIYROm1dDb6D=6M1
+IIm?C]i[MdQD;?o?0[06M72
+R1
+R2
+w1461016509
+8F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/SignExtend.v
+FF:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/SignExtend.v
+L0 1
+R3
+r1
+!s85 0
+31
+R17
+!s107 F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/SignExtend.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Programs - School/Spring_2016_Homework/Computer Architecture and Organization/Final Project/SignExtend.v|
+!s101 -O0
+!i113 1
+R5
+n@sign@extend
